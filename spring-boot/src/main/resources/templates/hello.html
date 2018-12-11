@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta content="text/html;charset=UTF-8"/>
+<title>Insert title here</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+  <script th:src="@{/js/jquery.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <script th:src="@{/js/angular.min.js}"></script>
+</head>
+<body>
+	<h1>hello fc</h1>
+	<h1>你好：{{yourName}}</h1>
+	<span th:text="${name}">hellohello:</span>
+	<!--angular  -->
+	<!-- <input type="text" ng-model="yourName" placeholder="输入你的名字"/><br/> -->
+
+	<form method="post" action="login">
+		name:	 <input type="text" name="name"/><br/>
+		password:<input type="password" name="password"/><br/>
+		记住我：<input type="checkbox" name="remeber"/>
+		<input type="submit" value="提交"/>
+	</form>
+	<!-- 注意script写法 -->
+	<script th:inline="javascript">
+		var name=[[${name}]];
+		console.info(name);
+	</script>
+</body>
+</html>
